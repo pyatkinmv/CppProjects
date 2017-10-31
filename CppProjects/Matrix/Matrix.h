@@ -1,4 +1,3 @@
-#include <iostream>
 #include <math.h>
 #define EPSILON 1e-10
 
@@ -34,6 +33,8 @@ public:
     b.m = 0;
     b.n = 0;
   }
+
+  ~Matrix () {}
 
   bool operator==(const Matrix & b) const {
     bool isEqual = true;
@@ -169,11 +170,13 @@ public:
     return *this;
   }
 
-  double& at(int i, int j) {
+  double& at(int i, int j) throw (MatrixException){
+    if(i>=m || j>=n) throw MatrixException("INDEX OUT OF BOUNDS");
     return a[i*n + j];
   }
 
-  double at(int i, int j) const {
+  double at(int i, int j) const throw (MatrixException){
+    if(i>=m || j>=n) throw MatrixException("INDEX OUT OF BOUNDS");
     return a[i*n + j];
   }
 

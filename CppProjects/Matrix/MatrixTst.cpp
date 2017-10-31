@@ -1,10 +1,11 @@
 #include "Matrix.h"
+#include <iostream>
 #include <cstdlib>
 int main()
 {
   try{
-  Matrix a(5,4);
-  Matrix b(4,7);
+  Matrix a(5,5);
+  Matrix b(5,6);
 
   a.fillRand();
   b.fillRand();

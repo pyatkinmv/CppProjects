@@ -1,13 +1,20 @@
 #include "Matrix.h"
+#include <iostream>
 Matrix &Matrix::transpose() {
   double temp;
-  for(int i=0;i<m;++i)
+  int tmpRaws;
+  if(m > n)
+    tmpRaws = n;
+  else tmpRaws = m;
+
+
+  for(int i=0;i<tmpRaws;++i)
     for(int j=0;j<i;++j) {
       temp = at(i,j);
       at(i,j) = at(j,i);
       at(j,i) = temp;
     }
-    return *this;
+   return *this;
   }
 
 void Matrix::rowReduct() {
