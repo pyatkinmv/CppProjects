@@ -9,14 +9,14 @@ public class Main{
 
     public static void main(String[] args) {
         Random rand = new Random();
-        Integer[] arr1 = new Integer[100];
-        for(int i=0;i<100;++i)
-            arr1[i] = rand.nextInt(100);
+        Integer[] arr1 = new Integer[100000];
+        for(int i=0;i<100000;++i)
+            arr1[i] = rand.nextInt(100000);
 
-        Integer[] arr2 = Arrays.copyOf(arr1,100);
+        Integer[] arr2 = Arrays.copyOf(arr1,100000);
 
         QuickSort<Integer> quickSort = new QuickSort<>();
-        quickSort.sort(arr1,0,99, (o1, o2)-> {
+        quickSort.sort(arr1,0,99999, (o1, o2)-> {
                 numOfCompars++;
                 return ((Integer) o1).compareTo((Integer) o2);
             }
