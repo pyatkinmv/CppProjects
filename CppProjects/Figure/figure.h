@@ -1,21 +1,21 @@
 #include <stdio.h>
- #include <math.h>
+#include <math.h>
 
- using namespace std;
- const double  PI =  3.14159;
- const double EPSILON = 0.0000001;
+using namespace std;
+const double  PI =  3.141596;
+const double EPSILON = 0.0000001;
 
- class Point {
- public:
+class Point {
+public:
     double x;
     double y;
 
-    Point():                         // Default constructor
+    Point(): 
         x(0.),
         y(0.)
     {}
 
-    Point(const Point& p):        // Copy-constructor
+    Point(const Point& p):        
         x(p.x),
         y(p.y)
     {}
@@ -63,48 +63,43 @@
     }
 
     double distance (const Point& b) const {
-        return sqrt(pow(x - b.x, 2) + pow(y - b.y, 2));
+        return sqrt((x - b.x)*(x - b.x) + (y - b.y)*(y - b.y));
     }
 
-    // Comparings
     bool operator==(const Point& p) const {
-        //... return (x == p.x && y == p.y);
         return (
-            fabs(x - p.x) <= EPSILON &&
-            fabs(y - p.y) <= EPSILON
+        fabs(x - p.x) <= EPSILON &&
+        fabs(y - p.y) <= EPSILON
         );
     }
     bool operator!=(const Point& p) const { return !operator==(p); }
     bool operator>=(const Point& p) const {
-        //... return (x > p.x || (x == p.x && y >= p.y));
         return (x > p.x || (x >= p.x && y >= p.y));
     }
     bool operator>(const Point& p) const {
-        //... return (x > p.x || (x == p.x && y > p.y));
         return (x > p.x || (x >= p.x && y > p.y));
     }
     bool operator<(const Point& p) const { return !operator>=(p); }
     bool operator<=(const Point& p) const { return !operator>(p); }
     void showDescription() {
-       printf("Point");
+        printf("Point");
     }
 };
 
 class Figure {
 public:
-    //конструктор класса фигуры
     Figure()
     {}
+
+    virtual ~Figure(){}
 
     virtual double getSquare() {
         return 0;
     }
     virtual void showDescription() {
-        printf("Abstract Figure ");
+        printf("Abstract Figure");
     }
-    virtual bool contains(const Point& p2) const {
-        return false;
-    }
+    virtual bool contains(const Point& p2) const = 0;
 };
 
 class Circle: public Figure {
@@ -117,7 +112,7 @@ public:
     {}
 
     Circle(const Point& _centre, double _radius):
-        centre(centre),
+        centre(_centre),
         radius(_radius)
     {}
 
@@ -137,8 +132,8 @@ public:
 
     bool operator==(const Circle& c) const {
         return (
-            fabs(centre.distance(c.centre)) <= EPSILON &&
-            fabs(radius - c.radius) <= EPSILON );
+        fabs(centre.distance(c.centre)) <= EPSILON &&
+        fabs(radius - c.radius) <= EPSILON );
     }
     bool operator!=(const Circle& c) const { return !operator==(c); }
 
@@ -148,12 +143,10 @@ public:
     void setCentre(Point _centre) { centre = _centre; }
     void setRadius(double _radius) { radius = _radius; }
 
-    bool contains(const Point& p2) const {
-        return centre.distance(p2) <= radius;
-    }
+    bool contains(const Point& p2) const;
 
     double getSquare() {
-       return PI * pow(radius, 2);
+        return PI * pow(radius, 2);
     }
 
     void showDescription() {
@@ -163,8 +156,8 @@ public:
 
 class Rectangle: public Figure {
     Point p;
-    double width;   // width
-    double height;   // height
+    double width;
+    double height;
 public:
     Rectangle():
         p(Point(0.,0.)),
@@ -184,7 +177,7 @@ public:
         height(r.height)
     {}
 
-     ~Rectangle() {}
+    ~Rectangle() {}
 
     Rectangle& operator=(const Rectangle& r) {
         p = r.p;
@@ -195,10 +188,10 @@ public:
 
     bool operator==(const Rectangle& rect) const {
         return (
-            fabs(p.distance(rect.getLeftBottom())) <= EPSILON &&
-            fabs(width - rect.getWidth()) <= EPSILON &&
-            fabs(height - rect.getHeight()) <= EPSILON
-         );
+        fabs(p.distance(rect.getLeftBottom())) <= EPSILON &&
+        fabs(width - rect.getWidth()) <= EPSILON &&
+        fabs(height - rect.getHeight()) <= EPSILON
+        );
     }
     bool operator!=(const Rectangle& rect) const { return !operator==(rect); }
 
@@ -213,20 +206,15 @@ public:
 
 
     double getSquare() {
-       return width * height;
+        return width * height;
     }
 
-    bool contains(const Point& p2) const {
-        return (
-            p.x <= p2.x && p2.x < p.x + width &&
-            p.y <= p2.y && p2.y < p.y + height
-        );
-    }
+    bool contains(const Point& p2) const;
 
     void showDescription() {
         printf("Rectangle");
     }
- };
+};
 
 class Triangle: public Figure {
     Point a;
@@ -251,7 +239,7 @@ public:
         c(t.c)
     {}
 
-     ~Triangle() {}
+    ~Triangle() {}
 
     Triangle& operator=(const Triangle& t) {
         a = t.a;
@@ -262,10 +250,10 @@ public:
 
     bool operator==(const Triangle& t) const {
         return (
-            fabs(a.distance(t.getA())) <= EPSILON &&
-            fabs(b.distance(t.getB())) <= EPSILON &&
-            fabs(c.distance(t.getC())) <= EPSILON
-         );
+        fabs(a.distance(t.getA())) <= EPSILON &&
+        fabs(b.distance(t.getB())) <= EPSILON &&
+        fabs(c.distance(t.getC())) <= EPSILON
+    );
     }
     bool operator!=(const Triangle& t) const { return !operator==(t); }
 

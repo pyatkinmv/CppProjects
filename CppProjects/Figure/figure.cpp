@@ -8,3 +8,14 @@ bool Triangle::contains(const Point& p) const {
     double n = (c.x - p.x) * (a.y - c.y) - (a.x - c.x) * (c.y - p.y);
     return ((l >= 0. && m >= 0. && n >= 0.) || (l <= 0. && m <= 0. && n <= 0.));
 }
+
+bool Rectangle::contains(const Point& p2) const {
+        return (
+        p.x <= p2.x && p2.x < p.x + width &&
+        p.y <= p2.y && p2.y < p.y + height
+        );
+    }
+
+bool Circle::contains(const Point& p2) const {
+        return centre.distance(p2) <= radius;
+    }
