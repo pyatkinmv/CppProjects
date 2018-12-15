@@ -35,35 +35,25 @@ public class ImageRotator {
         int k1 = N / 2;
         int k2 = (N % 2 == 0) ? N / 2 - 1 : N / 2;
 
-        if (clockwise) {
-            for (int i = 0; i <= k1; ++i) {
-                for (int j = 0; j <= k2; ++j) {
-                    int topLeft = matrix[i][j];
-                    int topRight = matrix[j][N - i];
-                    int botRigth = matrix[N - i][N - j];
-                    int botLeft = matrix[N - j][i];
-                    
-                    matrix[j][N - i] = topLeft;
-                    matrix[N - i][N - j] = topRight;
-                    matrix[N - j][i] = botRigth;
-                    matrix[i][j] = botLeft;
-                }
-            }
-        } else {
-            for (int i = 0; i <= k1; ++i) {
-                for (int j = 0; j <= k2; ++j) {
-                    int topLeft = matrix[i][j];
-                    int topRight = matrix[j][N - i];
-                    int botRigth = matrix[N - i][N - j];
-                    int botLeft = matrix[N - j][i];
-
-                    matrix[N - j][i] = topLeft;
-                    matrix[i][j] = topRight;
-                    matrix[j][N - i] = botRigth;
-                    matrix[N - i][N - j]= botLeft;
-                }
+        for (int i = 0; i <= k1; ++i) {
+            for (int j = 0; j <= k2; ++j) {
+                shift(matrix, i, j, clockwise);
             }
         }
+    }
+
+    private void shift(int[][] matrix, int i, int j, boolean clockwise) {
+        int N = matrix.length - 1;
+
+        int topLeft = matrix[i][j];
+        int topRight = matrix[j][N - i];
+        int botRigth = matrix[N - i][N - j];
+        int botLeft = matrix[N - j][i];
+
+        matrix[j][N - i] = clockwise ? topLeft : botRigth;
+        matrix[N - i][N - j] = clockwise ? topRight : botLeft;
+        matrix[N - j][i] = clockwise ? botRigth : topLeft;
+        matrix[i][j] = clockwise ? botLeft : topRight;
     }
 
     private int[][] rotateMatrix(int[][] matrix, boolean clockwise) {
@@ -71,15 +61,11 @@ public class ImageRotator {
         int width = matrix[0].length;
         int[][] rotated = new int[width][height];
 
-        if (clockwise) {
-            for (int i = 0; i < height; ++i) {
-                for (int j = 0; j < width; ++j) {
+        for (int i = 0; i < height; ++i) {
+            for (int j = 0; j < width; ++j) {
+                if (clockwise) {
                     rotated[width - j - 1][i] = matrix[i][j];
-                }
-            }
-        } else {
-            for (int i = 0; i < height; ++i) {
-                for (int j = 0; j < width; ++j) {
+                } else {
                     rotated[j][height - i - 1] = matrix[i][j];
                 }
             }
@@ -90,13 +76,14 @@ public class ImageRotator {
     public BufferedImage rotate(BufferedImage image, boolean clockwise) {
         int[][] arrImage = intArrayFromImage(image);
 
+        int[][] rotatedArray;
         if (arrImage.length == arrImage[0].length) {
             rotateSquareMatrix(arrImage, clockwise);
-            return imageFromIntArray(arrImage);
+            rotatedArray = arrImage;
+        } else {
+            rotatedArray = rotateMatrix(arrImage, clockwise);
         }
-
-        int[][] rotatedArray = rotateMatrix(arrImage, clockwise);
-
         return imageFromIntArray(rotatedArray);
     }
 }
+
