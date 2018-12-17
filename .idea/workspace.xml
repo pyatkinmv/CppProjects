@@ -2,29 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4791b239-43ff-4f4e-ae71-fc495b1e5fa0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/JavaProjects/ImageRotator/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/ImageRotator/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/ImageRotator/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/ImageRotator/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/ImageRotator/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/ImageRotator/ImageRotator.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/ImageRotator/image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/ImageRotator/result_image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/ImageRotator/square_image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/ImageRotator/src/ImageRotator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/ImageRotator/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/QuickSort/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/QuickSort/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/QuickSort/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/QuickSort/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/QuickSort/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/QuickSort/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/QuickSort/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/QuickSort/QuickSort.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/QuickSort/out/production/QuickSort/com/pyatkinmv/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/QuickSort/out/production/QuickSort/com/pyatkinmv/QuickSort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/QuickSort/src/com/pyatkinmv/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaProjects/QuickSort/src/com/pyatkinmv/QuickSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,13 +31,27 @@
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="gitignore" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="11" />
+        </counts>
+      </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -80,6 +73,13 @@
       </map>
     </option>
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="3" />
     <option name="y" value="8" />
@@ -99,11 +99,6 @@
               <item name="msu-edu-projects" type="b2602c69:ProjectViewProjectNode" />
               <item name="msu-edu-projects" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="msu-edu-projects" type="b2602c69:ProjectViewProjectNode" />
-              <item name="msu-edu-projects" type="462c0819:PsiDirectoryNode" />
-              <item name="CppProjects" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -113,6 +108,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\msu-edu-projects" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -141,6 +141,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -174,7 +175,11 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
